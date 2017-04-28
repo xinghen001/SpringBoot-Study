@@ -1,0 +1,14 @@
+server:
+  port: 8002
+  context-path: /sb-multidatasource
+
+main:
+  datasource:
+    url: jdbc:mysql://localhost:3306/congfz?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 910205
+second:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 910205
