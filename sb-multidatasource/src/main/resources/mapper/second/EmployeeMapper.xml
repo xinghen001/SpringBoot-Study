@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.billjc.dao.second.EmployeeMapper">
+
+    <resultMap id="employeeMap" type="Employee">
+        <id column="id" property="id" javaType="long"/>
+        <result column="user_name" property="userName" javaType="String"/>
+        <result column="password" property="password" javaType="String"/>
+        <result column="email" property="email" javaType="String"/>
+        <result column="nick_name" property="nickName" javaType="String"/>
+        <result column="reg_time" property="regTime" javaType="String"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="employeeMap">
+        SELECT * FROM employee
+    </select>
+    <insert id="insert" parameterType="User">
+        INSERT INTO employee(user_name, password, email, nick_name, reg_time)
+        VALUES (#{userName}, #{password}, #{email}, #{nickName}, #{regTime})
+    </insert>
+
+</mapper>
